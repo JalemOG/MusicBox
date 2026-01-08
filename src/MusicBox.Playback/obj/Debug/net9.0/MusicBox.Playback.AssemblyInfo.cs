@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MusicBox.Playback")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10bcb2e0c95525fda3e028316c12eb2d102e541d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b288bfcf89643578357c3e2e20e0acfdad9655b2")]
 [assembly: System.Reflection.AssemblyProductAttribute("MusicBox.Playback")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MusicBox.Playback")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
