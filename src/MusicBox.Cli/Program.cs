@@ -2,6 +2,9 @@
 using MusicBox.Errors;
 using MusicBox.Playback;
 
+bool verbose = false;
+
+
 const string DEMO_SCORE =
     "(Do, negra), (Re, corchea), (Mi, corchea), " +
     "(Fa, blanca), " +
@@ -19,6 +22,7 @@ static void PrintHelp()
     Console.WriteLine("  fwd           -> reproduce hacia adelante");
     Console.WriteLine("  bwd           -> reproduce hacia atrás");
     Console.WriteLine("  demo          -> carga y reproduce una partitura de demostración");
+    Console.WriteLine("  verbose on/off -> muestra nota, Hz y duración al reproducir");
     Console.WriteLine("  count         -> cantidad de notas cargadas");
     Console.WriteLine("  help          -> mostrar ayuda");
     Console.WriteLine("  exit          -> salir");
@@ -104,6 +108,25 @@ while (true)
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Error en demo: {ex.Message}");
+                }
+                break;
+
+            case "verbose":
+                if (arg.Equals("on", StringComparison.OrdinalIgnoreCase))
+                {
+                    verbose = true;
+                    app.SetPlaybackLogger(Console.WriteLine);
+                    Console.WriteLine("Verbose: ON");
+                }
+                else if (arg.Equals("off", StringComparison.OrdinalIgnoreCase))
+                {
+                    verbose = false;
+                    app.SetPlaybackLogger(null);
+                    Console.WriteLine("Verbose: OFF");
+                }
+                else
+                {
+                    Console.WriteLine("Uso: verbose on | verbose off");
                 }
                 break;
 

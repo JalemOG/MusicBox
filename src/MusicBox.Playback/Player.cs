@@ -8,6 +8,9 @@ public sealed class Player
     private readonly IPlayerAudio _audio;
     private readonly Tempo _tempo;
 
+    // 🔹 Logger opcional (verbose)
+    public Action<string>? Logger { get; set; }
+
     public Player(IPlayerAudio audio, Tempo tempo)
     {
         _audio = audio;
@@ -29,6 +32,13 @@ public sealed class Player
     private void PlayEvent(MusicEvent ev)
     {
         int ms = _tempo.DurationMs(ev.Figure);
-        _audio.PlayTone(ev.FrequencyHz(), ms);
+        double hz = ev.FrequencyHz();
+
+        // 👀 AQUÍ se muestra la info real
+        Logger?.Invoke(
+            $"Playing: {ev.Note} ({hz:F2} Hz) - {ev.Figure} ({ms} ms)"
+        );
+
+        _audio.PlayTone(hz, ms);
     }
 }

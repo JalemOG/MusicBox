@@ -19,6 +19,11 @@ public sealed class MusicBoxApp
         _player = new Player(audio, _tempo);
     }
 
+    public void SetPlaybackLogger(Action<string>? logger)
+    {
+        // _player es privado, pero estamos dentro de la clase
+        _player.Logger = logger;
+    }
     public void LoadFromString(string input) => _score = _parser.Parse(input);
 
     public void SetQuarterDuration(int ms) => _tempo.SetQuarterMs(ms);
