@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MusicBox.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+609e2d8b3cbbcbf25ccca3628c590e6ef2b429c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+633ed9ccb9625d219039e6b7b8d871fae421caaf")]
 [assembly: System.Reflection.AssemblyProductAttribute("MusicBox.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MusicBox.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
