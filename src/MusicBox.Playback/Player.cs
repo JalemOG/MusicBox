@@ -1,4 +1,4 @@
-using MusicBox.Core;
+using MusicBox.Domain;
 using MusicBox.Structures;
 
 namespace MusicBox.Playback;
@@ -30,7 +30,5 @@ public sealed class Player
     {
         int ms = _tempo.DurationMs(ev.Figure);
         _audio.PlayTone(ev.FrequencyHz(), ms);
-        // opcional: un pequeño silencio entre notas
-        // _audio.Silence(10);
     }
 }

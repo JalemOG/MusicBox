@@ -1,6 +1,6 @@
 using MusicBox.Domain;
 
-namespace MusicBox.Core;
+namespace MusicBox.Domain;
 
 public sealed class MusicEvent
 {

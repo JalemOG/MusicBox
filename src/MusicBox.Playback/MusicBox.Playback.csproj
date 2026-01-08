@@ -2,7 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MusicBox.Domain\MusicBox.Domain.csproj" />
-    <ProjectReference Include="..\MusicBox.Core\MusicBox.Core.csproj" />
+    <ProjectReference Include="..\MusicBox.Structures\MusicBox.Structures.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

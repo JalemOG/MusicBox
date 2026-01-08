@@ -1,0 +1,16 @@
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\obj\Debug\net9.0\MusicBox.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\obj\Debug\net9.0\MusicBox.Domain.AssemblyInfoInputs.cache
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\obj\Debug\net9.0\MusicBox.Domain.AssemblyInfo.cs
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\obj\Debug\net9.0\MusicBox.Domain.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\obj\Debug\net9.0\MusicBox.Domain.sourcelink.json
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\bin\Debug\net9.0\MusicBox.Domain.deps.json
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\bin\Debug\net9.0\MusicBox.Domain.dll
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\bin\Debug\net9.0\MusicBox.Domain.pdb
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\bin\Debug\net9.0\MusicBox.Errors.dll
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\bin\Debug\net9.0\MusicBox.Errors.pdb
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\obj\Debug\net9.0\MusicBox.Domain.csproj.AssemblyReference.cache
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\obj\Debug\net9.0\MusicBox.E5B57B04.Up2Date
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\obj\Debug\net9.0\MusicBox.Domain.dll
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\obj\Debug\net9.0\refint\MusicBox.Domain.dll
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\obj\Debug\net9.0\MusicBox.Domain.pdb
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Domain\obj\Debug\net9.0\ref\MusicBox.Domain.dll
