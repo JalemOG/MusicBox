@@ -2,6 +2,13 @@
 using MusicBox.Errors;
 using MusicBox.Playback;
 
+const string DEMO_SCORE =
+    "(Do, negra), (Re, corchea), (Mi, corchea), " +
+    "(Fa, blanca), " +
+    "(Sol, negra), (La, semicorchea), (Si, semicorchea), " +
+    "(Do, blanca)";
+
+
 static void PrintHelp()
 {
     Console.WriteLine("MusicBox CLI");
@@ -11,6 +18,7 @@ static void PrintHelp()
     Console.WriteLine("  load <texto>  -> carga partitura");
     Console.WriteLine("  fwd           -> reproduce hacia adelante");
     Console.WriteLine("  bwd           -> reproduce hacia atrás");
+    Console.WriteLine("  demo          -> carga y reproduce una partitura de demostración");
     Console.WriteLine("  count         -> cantidad de notas cargadas");
     Console.WriteLine("  help          -> mostrar ayuda");
     Console.WriteLine("  exit          -> salir");
