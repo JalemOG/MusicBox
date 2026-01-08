@@ -1,11 +1,85 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {}
+    "net9.0": {
+      "MusicBox.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "MusicBox.Errors": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MusicBox.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MusicBox.Domain.dll": {}
+        }
+      },
+      "MusicBox.Errors/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/MusicBox.Errors.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MusicBox.Errors.dll": {}
+        }
+      },
+      "MusicBox.Playback/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "MusicBox.Domain": "1.0.0",
+          "MusicBox.Structures": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MusicBox.Playback.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MusicBox.Playback.dll": {}
+        }
+      },
+      "MusicBox.Structures/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/MusicBox.Structures.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MusicBox.Structures.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MusicBox.Domain/1.0.0": {
+      "type": "project",
+      "path": "../MusicBox.Domain/MusicBox.Domain.csproj",
+      "msbuildProject": "../MusicBox.Domain/MusicBox.Domain.csproj"
+    },
+    "MusicBox.Errors/1.0.0": {
+      "type": "project",
+      "path": "../MusicBox.Errors/MusicBox.Errors.csproj",
+      "msbuildProject": "../MusicBox.Errors/MusicBox.Errors.csproj"
+    },
+    "MusicBox.Playback/1.0.0": {
+      "type": "project",
+      "path": "../MusicBox.Playback/MusicBox.Playback.csproj",
+      "msbuildProject": "../MusicBox.Playback/MusicBox.Playback.csproj"
+    },
+    "MusicBox.Structures/1.0.0": {
+      "type": "project",
+      "path": "../MusicBox.Structures/MusicBox.Structures.csproj",
+      "msbuildProject": "../MusicBox.Structures/MusicBox.Structures.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net9.0": []
+    "net9.0": [
+      "MusicBox.Domain >= 1.0.0",
+      "MusicBox.Errors >= 1.0.0",
+      "MusicBox.Playback >= 1.0.0",
+      "MusicBox.Structures >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\USUARIO II 2025\\.nuget\\packages\\": {}
@@ -31,7 +105,20 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\USUARIO II 2025\\Downloads\\MusicBox\\src\\MusicBox.Domain\\MusicBox.Domain.csproj": {
+              "projectPath": "C:\\Users\\USUARIO II 2025\\Downloads\\MusicBox\\src\\MusicBox.Domain\\MusicBox.Domain.csproj"
+            },
+            "C:\\Users\\USUARIO II 2025\\Downloads\\MusicBox\\src\\MusicBox.Errors\\MusicBox.Errors.csproj": {
+              "projectPath": "C:\\Users\\USUARIO II 2025\\Downloads\\MusicBox\\src\\MusicBox.Errors\\MusicBox.Errors.csproj"
+            },
+            "C:\\Users\\USUARIO II 2025\\Downloads\\MusicBox\\src\\MusicBox.Playback\\MusicBox.Playback.csproj": {
+              "projectPath": "C:\\Users\\USUARIO II 2025\\Downloads\\MusicBox\\src\\MusicBox.Playback\\MusicBox.Playback.csproj"
+            },
+            "C:\\Users\\USUARIO II 2025\\Downloads\\MusicBox\\src\\MusicBox.Structures\\MusicBox.Structures.csproj": {
+              "projectPath": "C:\\Users\\USUARIO II 2025\\Downloads\\MusicBox\\src\\MusicBox.Structures\\MusicBox.Structures.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,7 +1,7 @@
 ﻿using MusicBox.Domain;
 using MusicBox.Errors;
 
-namespace MusicBox.Core;
+namespace MusicBox.Domain;
 
 public sealed class Tempo
 {

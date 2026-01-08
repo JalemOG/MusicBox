@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "MusicBox.Domain/1.0.0": {
+        "dependencies": {
+          "MusicBox.Errors": "1.0.0"
+        },
+        "runtime": {
+          "MusicBox.Domain.dll": {}
+        }
+      },
+      "MusicBox.Errors/1.0.0": {
+        "runtime": {
+          "MusicBox.Errors.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MusicBox.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MusicBox.Errors/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

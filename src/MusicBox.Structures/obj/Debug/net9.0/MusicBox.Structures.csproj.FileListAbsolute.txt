@@ -1,0 +1,12 @@
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Structures\bin\Debug\net9.0\MusicBox.Structures.deps.json
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Structures\bin\Debug\net9.0\MusicBox.Structures.dll
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Structures\bin\Debug\net9.0\MusicBox.Structures.pdb
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Structures\obj\Debug\net9.0\MusicBox.Structures.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Structures\obj\Debug\net9.0\MusicBox.Structures.AssemblyInfoInputs.cache
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Structures\obj\Debug\net9.0\MusicBox.Structures.AssemblyInfo.cs
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Structures\obj\Debug\net9.0\MusicBox.Structures.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Structures\obj\Debug\net9.0\MusicBox.Structures.sourcelink.json
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Structures\obj\Debug\net9.0\MusicBox.Structures.dll
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Structures\obj\Debug\net9.0\refint\MusicBox.Structures.dll
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Structures\obj\Debug\net9.0\MusicBox.Structures.pdb
+C:\Users\USUARIO II 2025\Downloads\MusicBox\src\MusicBox.Structures\obj\Debug\net9.0\ref\MusicBox.Structures.dll
