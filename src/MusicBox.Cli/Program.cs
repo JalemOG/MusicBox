@@ -92,6 +92,20 @@ while (true)
             case "count":
                 Console.WriteLine($"Notas en memoria: {app.Count()}");
                 break;
+                        
+            case "demo":
+                try
+                {
+                    app.LoadFromString(DEMO_SCORE);
+                    Console.WriteLine("Partitura demo cargada:");
+                    Console.WriteLine(DEMO_SCORE);
+                    app.PlayForward();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error en demo: {ex.Message}");
+                }
+                break;
 
             case "exit":
             case "quit":
