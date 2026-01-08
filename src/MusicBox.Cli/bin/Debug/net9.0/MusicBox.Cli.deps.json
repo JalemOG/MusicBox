@@ -1,0 +1,106 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "MusicBox.Cli/1.0.0": {
+        "dependencies": {
+          "MusicBox.Core": "1.0.0",
+          "MusicBox.Errors": "1.0.0",
+          "MusicBox.Playback": "1.0.0"
+        },
+        "runtime": {
+          "MusicBox.Cli.dll": {}
+        }
+      },
+      "MusicBox.Core/1.0.0": {
+        "dependencies": {
+          "MusicBox.Domain": "1.0.0",
+          "MusicBox.Errors": "1.0.0",
+          "MusicBox.Playback": "1.0.0",
+          "MusicBox.Structures": "1.0.0"
+        },
+        "runtime": {
+          "MusicBox.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MusicBox.Domain/1.0.0": {
+        "dependencies": {
+          "MusicBox.Errors": "1.0.0"
+        },
+        "runtime": {
+          "MusicBox.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MusicBox.Errors/1.0.0": {
+        "runtime": {
+          "MusicBox.Errors.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MusicBox.Playback/1.0.0": {
+        "dependencies": {
+          "MusicBox.Domain": "1.0.0",
+          "MusicBox.Structures": "1.0.0"
+        },
+        "runtime": {
+          "MusicBox.Playback.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MusicBox.Structures/1.0.0": {
+        "runtime": {
+          "MusicBox.Structures.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MusicBox.Cli/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MusicBox.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MusicBox.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MusicBox.Errors/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MusicBox.Playback/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MusicBox.Structures/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
