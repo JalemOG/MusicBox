@@ -1,0 +1,36 @@
+sequenceDiagram
+autonumber
+actor Usuario
+participant CLI as MusicBox.Cli/Program
+participant App as MusicBox.Core/MusicBoxApp
+participant Parser as MusicBox.Core/ScoreParser
+participant Notes as MusicBox.Domain/NoteCatalog
+participant Figures as MusicBox.Domain/FigureCatalog
+participant List as MusicBox.Structures/DoublyLinkedList<MusicEvent>
+participant Player as MusicBox.Playback/Player
+participant Tempo as MusicBox.Domain/Tempo
+participant Ev as MusicBox.Domain/MusicEvent
+participant Audio as MusicBox.Playback/IPlayerAudio
+participant Beep as MusicBox.Playback/BeepAudioEngine
+
+Usuario->>CLI: demo / load "(Do, negra), ..."
+CLI->>App: LoadFromString(input)
+App->>Parser: Parse(input)
+Parser->>Notes: FromString("Do")
+Parser->>Figures: FromString("negra")
+Parser->>List: Append(new MusicEvent(...))
+Parser-->>App: score (lista doble)
+App-->>CLI: (score cargada)
+
+Usuario->>CLI: fwd
+CLI->>App: PlayForward()
+App->>Player: PlayForward(score)
+loop por cada MusicEvent (Forward)
+  Player->>Tempo: DurationMs(Figure)
+  Player->>Ev: FrequencyHz()
+  Player->>Audio: PlayTone(hz, ms)
+  Note over Audio,Beep: En ejecución real, Audio = BeepAudioEngine
+(Console.Beep)
+end
+Player-->>App: fin
+App-->>CLI: (fin reproducción)

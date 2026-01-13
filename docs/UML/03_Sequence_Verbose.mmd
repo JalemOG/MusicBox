@@ -1,0 +1,20 @@
+sequenceDiagram
+autonumber
+actor Usuario
+participant CLI as MusicBox.Cli/Program
+participant App as MusicBox.Core/MusicBoxApp
+participant Player as MusicBox.Playback/Player
+
+Usuario->>CLI: verbose on
+CLI->>App: SetPlaybackLogger(Console.WriteLine)
+App->>Player: Logger = Console.WriteLine
+
+Usuario->>CLI: fwd / demo
+CLI->>App: PlayForward()
+Note over Player: En cada evento musical:
+Logger?.Invoke("Playing: ... Hz ... ms")
+Player-->>CLI: (se imprime línea por cada nota)
+
+Usuario->>CLI: verbose off
+CLI->>App: SetPlaybackLogger(null)
+App->>Player: Logger = null
