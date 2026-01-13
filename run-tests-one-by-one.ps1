@@ -1,41 +1,56 @@
-# ==========================================
-# Script: Ejecución individual de pruebas
-# Proyecto: MusicBox
-# Descripción:
-#   Ejecuta pruebas unitarias una por una
-#   utilizando filtros de xUnit.
-# ==========================================
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
-Write-Host "Iniciando ejecución individual de pruebas unitarias..." -ForegroundColor Cyan
+$ErrorActionPreference = "Stop"
+
+Write-Host "Ejecución estricta de pruebas unitarias (una por una)" -ForegroundColor Cyan
 Write-Host ""
 
-# -------------------- Tests de Tempo --------------------
-Write-Host "Ejecutando test: Tempo_AllowsBoundaryValues_100_And_5000" -ForegroundColor Yellow
-dotnet test MusicBox.sln --filter FullyQualifiedName~Tempo_AllowsBoundaryValues_100_And_5000
-Write-Host ""
+$tests = @(
+  "MusicBox.Tests.MoreUnitTests.Tempo_AllowsBoundaryValues_100_And_5000",
+  "MusicBox.Tests.MoreUnitTests.Parser_TupleWithWrongArity_ThrowsParseException",
+  "MusicBox.Tests.MoreUnitTests.DoublyLinkedList_Backward_IsReverseOfForward",
 
-# -------------------- Tests de Parser --------------------
-Write-Host "Ejecutando test: Parser_TupleWithWrongArity_ThrowsParseException" -ForegroundColor Yellow
-dotnet test MusicBox.sln --filter FullyQualifiedName~Parser_TupleWithWrongArity_ThrowsParseException
-Write-Host ""
+  "MusicBox.Tests.ExtraTests.App_Clear_RemovesAllNotes_AndPlaybackProducesNoTones",
+  "MusicBox.Tests.ExtraTests.Player_UsesTempoToComputeDurations_ForDifferentFigures",
+  "MusicBox.Tests.ExtraTests.Parser_IgnoresTextOutsideParentheses_AndParsesOnlyTuples",
 
-Write-Host "Ejecutando test: Parser_IgnoresTextOutsideParentheses_AndParsesOnlyTuples" -ForegroundColor Yellow
-dotnet test MusicBox.sln --filter FullyQualifiedName~Parser_IgnoresTextOutsideParentheses_AndParsesOnlyTuples
-Write-Host ""
+  "MusicBox.Tests.DomainCatalogTests.NoteCatalog_IsCaseInsensitive_AndTrims",
+  "MusicBox.Tests.DomainCatalogTests.FigureCatalog_IsCaseInsensitive_AndTrims",
 
-# -------------------- Tests de Estructuras --------------------
-Write-Host "Ejecutando test: DoublyLinkedList_Backward_IsReverseOfForward" -ForegroundColor Yellow
-dotnet test MusicBox.sln --filter FullyQualifiedName~DoublyLinkedList_Backward_IsReverseOfForward
-Write-Host ""
+  "MusicBox.Tests.DoublyLinkedListTests.Append_AddsToTail_AndUpdatesHeadTail",
+  "MusicBox.Tests.DoublyLinkedListTests.Prepend_AddsToHead_AndUpdatesHeadTail",
+  "MusicBox.Tests.DoublyLinkedListTests.Backward_IteratesFromTailToHead",
+  "MusicBox.Tests.DoublyLinkedListTests.Clear_ResetsListState",
 
-# -------------------- Tests de Playback --------------------
-Write-Host "Ejecutando test: Player_UsesTempoToComputeDurations_ForDifferentFigures" -ForegroundColor Yellow
-dotnet test MusicBox.sln --filter FullyQualifiedName~Player_UsesTempoToComputeDurations_ForDifferentFigures
-Write-Host ""
+  "MusicBox.Tests.ParserEdgeCaseTests.Parse_EmptyInput_Throws",
+  "MusicBox.Tests.ParserEdgeCaseTests.Parse_AllowsSpacesAndMixedCase",
+  "MusicBox.Tests.ParserEdgeCaseTests.Parse_TupleWithWrongArity_Throws",
 
-# -------------------- Tests de Aplicación --------------------
-Write-Host "Ejecutando test: App_Clear_RemovesAllNotes_AndPlaybackProducesNoTones" -ForegroundColor Yellow
-dotnet test MusicBox.sln --filter FullyQualifiedName~App_Clear_RemovesAllNotes_AndPlaybackProducesNoTones
-Write-Host ""
+  "MusicBox.Tests.ParserTests.Parse_ValidInput_CreatesEvents",
+  "MusicBox.Tests.ParserTests.Parse_InvalidNote_Throws",
+  "MusicBox.Tests.ParserTests.Parse_InvalidFigure_Throws",
+  "MusicBox.Tests.ParserTests.Parse_UnbalancedParentheses_Throws",
 
-Write-Host "Ejecución individual de pruebas finalizada." -ForegroundColor Green
+  "MusicBox.Tests.PlaybackTests.PlayForward_ProducesTonesInOrder",
+  "MusicBox.Tests.PlaybackTests.PlayBackward_ProducesTonesInReverseOrder",
+  "MusicBox.Tests.PlaybackTests.SetQuarterDuration_OutOfRange_Throws",
+
+  "MusicBox.Tests.TempoTests.Tempo_Limits_RejectTooSmall",
+  "MusicBox.Tests.TempoTests.Tempo_Limits_RejectTooLarge",
+  "MusicBox.Tests.TempoTests.DurationMs_ScalesCorrectly",
+
+  "MusicBox.Tests.VerboseLoggerTests.Logger_IsCalledOncePerNote_WithHzAndMs"
+)
+
+# Quitar duplicados por si acaso
+$tests = $tests | Select-Object -Unique
+
+$passed = 0
+foreach ($t in $tests) {
+  Write-Host "Ejecutando: $t" -ForegroundColor Yellow
+  dotnet test MusicBox.sln --filter "FullyQualifiedName=$t" -v minimal
+  $passed++
+  Write-Host ""
+}
+
+Write-Host "Ejecución individual finalizada correctamente. Tests ejecutados: $passed" -ForegroundColor Green
