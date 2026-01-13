@@ -1,0 +1,171 @@
+classDiagram
+direction LR
+
+%% =======================
+%% CLI
+%% =======================
+namespace MusicBox.Cli {
+  class Program
+}
+
+%% =======================
+%% Core
+%% =======================
+namespace MusicBox.Core {
+  class MusicBoxApp {
+    - Tempo _tempo
+    - ScoreParser _parser
+    - DoublyLinkedList~MusicEvent~ _score
+    - Player _player
+    + MusicBoxApp(IPlayerAudio audio, int quarterMs=500)
+    + SetPlaybackLogger(Action~string~? logger)
+    + LoadFromString(string input)
+    + SetQuarterDuration(int ms)
+    + PlayForward()
+    + PlayBackward()
+    + Clear()
+    + Count() int
+  }
+
+  class ScoreParser {
+    - NoteCatalog _notes
+    - FigureCatalog _figures
+    + ScoreParser(NoteCatalog notes, FigureCatalog figures)
+    + Parse(string input) DoublyLinkedList~MusicEvent~
+  }
+}
+
+%% =======================
+%% Domain
+%% =======================
+namespace MusicBox.Domain {
+  class Tempo {
+    - int _quarterMs
+    + Tempo(int quarterMs)
+    + QuarterMs int
+    + SetQuarterMs(int ms)
+    + DurationMs(Figure figure) int
+  }
+
+  class MusicEvent {
+    + Note Note
+    + Figure Figure
+    + MusicEvent(Note note, Figure figure)
+    + FrequencyHz() double
+  }
+
+  class NoteCatalog {
+    + IsValid(string name) bool
+    + FromString(string name) Note
+  }
+
+  class FigureCatalog {
+    + IsValid(string name) bool
+    + FromString(string name) Figure
+  }
+
+  class Note {
+    <<enumeration>>
+    Do
+    Re
+    Mi
+    Fa
+    Sol
+    La
+    Si
+  }
+
+  class Figure {
+    <<enumeration>>
+    Redonda
+    Blanca
+    Negra
+    Corchea
+    Semicorchea
+  }
+}
+
+%% =======================
+%% Structures
+%% =======================
+namespace MusicBox.Structures {
+  class DoublyLinkedList~T~ {
+    - Node~T~? _head
+    - Node~T~? _tail
+    - int _size
+    + Count int
+    + Append(T value)
+    + Prepend(T value)
+    + Clear()
+    + Forward() IEnumerable~T~
+    + Backward() IEnumerable~T~
+  }
+
+  class Node~T~ {
+    + T Value
+    + Node~T~? Prev
+    + Node~T~? Next
+    + Node(T value)
+  }
+}
+
+%% =======================
+%% Playback
+%% =======================
+namespace MusicBox.Playback {
+  class Player {
+    - IPlayerAudio _audio
+    - Tempo _tempo
+    + Logger Action~string~?
+    + Player(IPlayerAudio audio, Tempo tempo)
+    + PlayForward(DoublyLinkedList~MusicEvent~ score)
+    + PlayBackward(DoublyLinkedList~MusicEvent~ score)
+  }
+
+  class BeepAudioEngine {
+    + PlayTone(double frequencyHz, int durationMs)
+    + Silence(int durationMs)
+  }
+
+  class IPlayerAudio {
+    <<interface>>
+    + PlayTone(double frequencyHz, int durationMs)
+    + Silence(int durationMs)
+  }
+}
+
+%% =======================
+%% Errors
+%% =======================
+namespace MusicBox.Errors {
+  class ParseException
+  class InvalidTempoException
+}
+
+%% =======================
+%% Relaciones
+%% =======================
+Program --> MusicBoxApp : usa
+
+MusicBoxApp *-- Tempo
+MusicBoxApp *-- ScoreParser
+MusicBoxApp o-- DoublyLinkedList~MusicEvent~
+MusicBoxApp *-- Player
+
+ScoreParser --> NoteCatalog
+ScoreParser --> FigureCatalog
+ScoreParser --> DoublyLinkedList~MusicEvent~ : crea
+
+DoublyLinkedList~T~ *-- Node~T~
+
+MusicEvent --> Note
+MusicEvent --> Figure
+
+Player --> Tempo : usa
+Player --> DoublyLinkedList~MusicEvent~ : recorre
+Player --> IPlayerAudio : invoca
+
+BeepAudioEngine ..|> IPlayerAudio
+
+Tempo ..> InvalidTempoException : lanza
+ScoreParser ..> ParseException : lanza
